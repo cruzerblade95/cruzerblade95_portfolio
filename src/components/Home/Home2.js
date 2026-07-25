@@ -12,29 +12,50 @@ function Home2() {
             <h1 style={{ fontSize: "2.6em" }}>
               LET ME <span className="purple">INTRODUCE</span> MYSELF
             </h1>
+
             <p className="home-about-body">
-              I’m Nabil Ajwad, a software engineer focused on building scalable web, mobile, and cloud solutions for modern businesses.
+              I’m Nabil Ajwad, a Senior Software Engineer with more than five
+              years of experience delivering web, mobile, fintech, and
+              cloud-based products.
               <br />
               <br />
-              My experience spans
+
+              My experience includes
               <i>
                 <b className="purple">
-                  {" "}Flutter, Laravel, React.js, REST APIs, Firebase, AWS, and MySQL/PostgreSQL{" "}
+                  {" "}
+                  Flutter, Laravel, PHP, React, TypeScript, REST APIs, Firebase,
+                  AWS, MySQL, and PostgreSQL
                 </b>
               </i>
-              , with a strong focus on fintech products, secure payment flows, and reliable deployment.
+              , with a strong focus on secure payments, API-driven architecture,
+              and reliable production delivery.
               <br />
               <br />
-              I enjoy turning complex requirements into user-friendly products and have worked across the full delivery lifecycle from architecture and development to testing and deployment.
+
+              I’ve developed cross-platform applications released on Google
+              Play and the Apple App Store, built enterprise management
+              platforms, integrated blockchain workflows, and deployed
+              applications to AWS.
               <br />
               <br />
-              I’m especially interested in
-              <b className="purple"> fintech platforms, API-driven systems, and AI-enabled product features.</b>
+
+              I’m currently expanding my experience into
+              <b className="purple">
+                {" "}
+                AI-powered applications, developer tools, cloud-native
+                full-stack systems, and business process automation.
+              </b>
             </p>
           </Col>
+
           <Col md={4} className="myAvtar">
             <Tilt>
-              <img src={myImg} className="img-fluid" alt="avatar" />
+              <img
+                src={myImg}
+                className="img-fluid"
+                alt="Nabil Ajwad developer avatar"
+              />
             </Tilt>
           </Col>
         </Row>
@@ -42,4 +63,5 @@ function Home2() {
     </Container>
   );
 }
+
 export default Home2;

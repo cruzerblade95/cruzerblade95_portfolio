@@ -7,9 +7,10 @@ function Type() {
       options={{
         strings: [
           "Senior Software Engineer",
-          "Flutter & Laravel Developer",
-          "Fintech & Cloud Apps",
-          "API & AI Integrations",
+          "AI Full-Stack Developer",
+          "Flutter Developer",
+          "Laravel & React Developer",
+          "AWS, APIs & Web3 Developer",
         ],
         autoStart: true,
         loop: true,

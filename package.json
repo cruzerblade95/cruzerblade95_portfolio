@@ -1,6 +1,6 @@
 {
-  "name": "portfolio",
-  "version": "0.1.0",
+  "name": "nabil-ajwad-portfolio",
+  "version": "1.0.0",
   "private": true,
   "dependencies": {
     "@react-pdf/renderer": "^2.2.0",
@@ -39,7 +39,7 @@
     "production": [
       ">0.2%",
       "not dead",
-      "not op_mini all"
+      "not_op_mini all"
     ],
     "development": [
       "last 1 chrome version",

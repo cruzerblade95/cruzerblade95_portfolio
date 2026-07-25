@@ -13,19 +13,20 @@ function Home() {
     <section>
       <Container fluid className="home-section" id="home">
         <Particle />
+
         <Container className="home-content">
           <Row>
             <Col md={7} className="home-header">
               <h1 style={{ paddingBottom: 15 }} className="heading">
                 Hello!{" "}
-                <span className="wave" role="img" aria-labelledby="wave">
+                <span className="wave" role="img" aria-label="wave">
                   👋🏻
                 </span>
               </h1>
 
               <h1 className="heading-name">
                 I&apos;M
-                <strong className="main-name"> NABIL AJWAD BIN ROSEDI</strong>
+                <strong className="main-name"> NABIL AJWAD ROSEDI</strong>
               </h1>
 
               <div style={{ padding: 50, textAlign: "left" }}>
@@ -36,7 +37,7 @@ function Home() {
             <Col md={5} style={{ paddingBottom: 20 }}>
               <img
                 src={homeLogo}
-                alt="home pic"
+                alt="Software developer working on web and mobile applications"
                 className="img-fluid"
                 style={{ maxHeight: "450px" }}
               />
@@ -44,52 +45,61 @@ function Home() {
           </Row>
         </Container>
       </Container>
+
       <Home2 />
 
       <Container>
         <Row style={{ paddingTop: "50px", paddingBottom: "80px" }}>
           <Col md={12} className="home-about-social">
             <h1>Connect With Me</h1>
+
             <p>
-              Feel free to <span className="purple">reach out</span> for collaborations, opportunities, or projects.
+              Feel free to <span className="purple">reach out</span> for
+              collaborations, software projects, or career opportunities.
             </p>
+
             <ul className="home-about-social-links">
               <li className="social-icons">
                 <a
-                  href="https://github.com/"
+                  href="https://github.com/cruzerblade95"
                   target="_blank"
                   rel="noreferrer"
                   className="icon-colour home-social-icons"
+                  aria-label="GitHub profile"
                 >
                   <AiFillGithub />
                 </a>
               </li>
+
               <li className="social-icons">
                 <a
                   href="https://www.linkedin.com/in/nabil-ajwad-rosedi-4bbb621a2/"
                   target="_blank"
                   rel="noreferrer"
                   className="icon-colour home-social-icons"
+                  aria-label="LinkedIn profile"
                 >
                   <FaLinkedinIn />
                 </a>
               </li>
+
               <li className="social-icons">
                 <a
                   href="https://mybc.tech/cruzerblade95"
                   target="_blank"
                   rel="noreferrer"
                   className="icon-colour home-social-icons"
+                  aria-label="Portfolio website"
                 >
                   <CgWebsite />
                 </a>
               </li>
+
               <li className="social-icons">
                 <a
                   href="mailto:nabilajwad10@gmail.com"
-                  target="_blank"
-                  rel="noreferrer"
                   className="icon-colour home-social-icons"
+                  aria-label="Send email"
                 >
                   <AiOutlineMail />
                 </a>

@@ -759,3 +759,132 @@ button:focus {
 .fork-btn-inner::after {
   display: none !important;
 }
+
+/* --------- */
+/* Professional Experience */
+/* --------- */
+
+.experience-grid,
+.certification-grid {
+  justify-content: center;
+  padding: 20px 0 50px;
+}
+
+.experience-grid > div,
+.certification-grid > div {
+  display: flex;
+  padding: 12px;
+}
+
+.experience-card,
+.certification-card {
+  width: 100%;
+  padding: 24px;
+  text-align: left;
+  color: #ffffff;
+  background: rgba(30, 18, 44, 0.72);
+  border: 1px solid rgba(199, 112, 240, 0.45);
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(89, 4, 168, 0.2);
+  transition:
+    transform 0.3s ease,
+    border-color 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.experience-card:hover,
+.certification-card:hover {
+  transform: translateY(-5px);
+  border-color: rgba(199, 112, 240, 0.9);
+  box-shadow: 0 8px 22px rgba(89, 4, 168, 0.35);
+}
+
+.experience-card h3,
+.certification-card h3 {
+  margin: 8px 0;
+  color: #c770f0;
+  font-size: 1.3rem;
+  font-weight: 600;
+}
+
+.experience-card h4 {
+  margin-bottom: 12px;
+  color: #ffffff;
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+.experience-card p,
+.certification-card p {
+  margin-bottom: 0;
+  color: #e4dced;
+  line-height: 1.7;
+}
+
+.experience-date {
+  color: #bca9cc;
+  font-size: 0.9rem;
+}
+
+/* --------- */
+/* Project Technology Tags */
+/* --------- */
+
+.project-tech-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 7px;
+  margin: 16px 0;
+}
+
+.project-tech-tag {
+  padding: 4px 10px;
+  color: #f1ddfa;
+  background: rgba(199, 112, 240, 0.16);
+  border: 1px solid rgba(199, 112, 240, 0.45);
+  border-radius: 999px;
+  font-size: 0.78rem;
+  white-space: nowrap;
+}
+
+/* --------- */
+/* Project Buttons */
+/* --------- */
+
+.project-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  margin-top: auto;
+}
+
+.project-buttons .btn {
+  margin-left: 0 !important;
+}
+
+/* --------- */
+/* Responsive Cards */
+/* --------- */
+
+@media (max-width: 767px) {
+  .experience-grid > div,
+  .certification-grid > div {
+    padding: 8px;
+  }
+
+  .experience-card,
+  .certification-card {
+    padding: 20px;
+  }
+
+  .experience-card h3,
+  .certification-card h3 {
+    font-size: 1.15rem;
+  }
+
+  .project-tech-tag {
+    font-size: 0.72rem;
+  }
+}

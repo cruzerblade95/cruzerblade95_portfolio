@@ -8,32 +8,65 @@ function AboutCard() {
       <Card.Body>
         <blockquote className="blockquote mb-0">
           <p style={{ textAlign: "justify" }}>
-            Hi everyone! I’m <span className="purple">Nabil Ajwad Bin Rosedi</span>{" "}
-            from <span className="purple">Alor Setar, Kedah, Malaysia</span>.
+            Hi! I’m{" "}
+            <span className="purple">Nabil Ajwad Rosedi</span> from{" "}
+            <span className="purple">
+              Alor Setar, Kedah, Malaysia
+            </span>
+            .
             <br />
-            I’m a <span className="purple">Senior Software Engineer</span> with experience building scalable web, mobile, and cloud applications for fintech and digital transformation.
             <br />
-            My background includes <span className="purple">Flutter, Laravel, React.js, REST APIs, Firebase, AWS, and MySQL/PostgreSQL</span>.
+
+            I’m a <span className="purple">Senior Software Engineer</span>{" "}
+            with more than five years of experience building production web,
+            mobile, fintech, and cloud applications.
             <br />
             <br />
-            I enjoy working on:
+
+            I have contributed to secure payment systems, enterprise platforms,
+            mobile applications released on major app stores, blockchain
+            integrations, and AI-enabled developer tools.
+            <br />
+            <br />
+
+            My core technologies include{" "}
+            <span className="purple">
+              Flutter, Laravel, PHP, React, TypeScript, REST APIs, Firebase,
+              AWS, MySQL, and PostgreSQL
+            </span>
+            .
+            <br />
+            <br />
+
+            I enjoy:
           </p>
 
           <ul>
             <li className="about-activity">
-              <ImPointRight /> Building fintech and payment-focused products
+              <ImPointRight /> Building useful AI and automation products
             </li>
+
             <li className="about-activity">
-              <ImPointRight /> Designing robust API-backed systems
+              <ImPointRight /> Designing reliable APIs and full-stack systems
             </li>
+
             <li className="about-activity">
-              <ImPointRight /> Exploring AI and cloud integrations
+              <ImPointRight /> Developing cross-platform Flutter applications
+            </li>
+
+            <li className="about-activity">
+              <ImPointRight /> Deploying and maintaining cloud applications
+            </li>
+
+            <li className="about-activity">
+              <ImPointRight /> Exploring fintech and Web3 technologies
             </li>
           </ul>
 
           <p style={{ color: "rgb(155 126 172)" }}>
             “Build valuable products with purpose, precision, and reliability.”
           </p>
+
           <footer className="blockquote-footer">Nabil</footer>
         </blockquote>
       </Card.Body>

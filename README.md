@@ -1,377 +1,308 @@
-# 🚀 Personal Portfolio Website
+# Nabil Ajwad Rosedi — Developer Portfolio
 
-<p align="center">
-  <strong>A modern personal portfolio website built with React.js and deployed on AWS EC2.</strong>
-</p>
+A responsive React portfolio presenting my experience as a Senior Software
+Engineer across AI, web, mobile, fintech, cloud, and Web3 development.
 
-<p align="center">
-  <a href="https://mybc.tech">🌐 Live Website</a>
-  •
-  <a href="https://github.com/cruzerblade95/cruzerblade95_portfolio">💻 Source Code</a>
-</p>
+[Live website](https://mybc.tech) ·
+[GitHub profile](https://github.com/cruzerblade95) ·
+[LinkedIn](https://www.linkedin.com/in/nabil-ajwad-rosedi-4bbb621a2/)
 
----
+## About Me
 
-## 📌 About the Project
+I am a Senior Software Engineer with more than five years of experience
+building production-ready applications.
 
-This is my personal developer portfolio website, created to showcase my professional experience, technical skills, software engineering projects, and career journey.
+My core stack includes Flutter, Laravel, PHP, React, TypeScript, REST APIs,
+Firebase, AWS, MySQL, and PostgreSQL.
 
-The project demonstrates my ability to build a modern frontend application using React.js and independently deploy and manage a production website on AWS infrastructure.
+My professional experience includes:
 
-Rather than using a managed hosting platform, I configured and deployed the application on my own AWS EC2 Linux server using HestiaCP, giving me hands-on experience with cloud infrastructure, Linux server administration, DNS configuration, SSL certificates, web server management, and production deployment.
+- Fintech platforms and secure payment features
+- REST API development and third-party integrations
+- Flutter applications released on Google Play and the Apple App Store
+- Laravel enterprise systems and React single-page applications
+- Blockchain integrations and smart-contract interactions
+- AI-powered applications and reusable TypeScript developer tools
+- AWS deployment and Linux server administration
+- DNS, HTTPS, Nginx, Apache, HestiaCP, cPanel, WHM, and Plesk
 
----
+## Featured Projects
 
-## ✨ Features
+| Project | Highlights | Technologies |
+| --- | --- | --- |
+| [AI Client SDK](https://github.com/cruzerblade95/ai-client) | Provider-agnostic AI SDK published as [`@cruzerblade95/ai-client`](https://www.npmjs.com/package/@cruzerblade95/ai-client) | TypeScript, AWS Bedrock, OpenAI, Anthropic, Vitest |
+| [Web3 AI Portfolio](https://github.com/cruzerblade95/web3-ai-portfolio) | Multi-chain portfolio analytics with generative AI insights | React, TypeScript, AWS, Bedrock, Web3 |
+| [E-DA Wallet](https://github.com/cruzerblade95/E-DA-User-App) | Wallet management, QR payments, transaction history, and secure APIs | Flutter, Laravel, MySQL, REST API |
+| Penang Smart Kariah | Production community application released on Google Play and the Apple App Store | Flutter, Firebase, REST API |
+| [SPB MAINPP](https://mims.mainpp.gov.my/) | Integrated management system supporting organizational workflows | Laravel, PHP, MySQL, JavaScript |
+| [AWS Portfolio](https://github.com/cruzerblade95/cruzerblade95_portfolio) | Self-managed production deployment with a custom domain and HTTPS | React, AWS EC2, Linux, HestiaCP, Nginx |
 
-* Responsive personal portfolio website
-* Professional profile and developer introduction
-* Technical skills showcase
-* Project portfolio
-* Work experience and career background
-* Education and certifications
-* Contact and social media links
-* Responsive layout for desktop and mobile devices
-* Production deployment on AWS EC2
-* HTTPS-enabled custom domain
-* Linux server administration using HestiaCP
+## Professional Experience
 
----
+### Senior Software Engineer
 
-## 🛠️ Technology Stack
+**Megah Fintech Sdn. Bhd.**  
+January 2025 – June 2026
 
-### Frontend
+- Led the development of fintech features
+- Designed secure payment-related functionality and REST APIs
+- Worked on blockchain integrations and smart-contract interactions
+- Contributed to architecture planning and code reviews
+- Improved product reliability and maintainability
 
-* React.js
-* JavaScript
-* HTML5
-* CSS3
+### Software Engineer
 
-### Development Tools
+**MyRich Dynasty Networks Sdn. Bhd.**  
+February 2023 – December 2024
 
-* Git
-* GitHub
-* npm
-* Node.js
+- Developed enterprise applications using Laravel and PHP
+- Built cross-platform mobile applications using Flutter
+- Integrated frontend and mobile applications with REST APIs
+- Contributed to a React SPA deployed through AWS Amplify
+- Used GitHub-based CI/CD for application delivery
+- Improved existing application features and usability
 
-### Cloud & Infrastructure
+### Full-Stack Developer
 
-* Amazon Web Services (AWS)
-* Amazon EC2
-* Ubuntu Linux
-* Elastic IP
-* HestiaCP
-* Nginx
-* Apache
+**AdEasy**  
+March 2022 – September 2022
 
-### Deployment & Server Administration
+- Participated in sprint planning meetings
+- Gathered and analyzed user and departmental requirements
+- Developed and tested website improvements
+- Refined features based on business requirements
 
-* Linux server administration
-* DNS configuration
-* Custom domain configuration
-* SSL/TLS with Let's Encrypt
-* HTTPS
-* Web server configuration
-* File permissions and ownership management
+### Programmer
 
----
+**PocketData (M) Sdn. Bhd.**  
+December 2020 – February 2022
 
-## 🏗️ Deployment Architecture
+- Participated in daily Scrum meetings
+- Analyzed user requirements
+- Developed and maintained application features
+- Tested and refined code for reliability and performance
+- Collaborated with team members on software delivery
 
-```text
-                         Internet
-                            │
-                            ▼
-                       mybc.tech
-                            │
-                            ▼
-                       DNS Records
-                            │
-                            ▼
-                     AWS Elastic IP
-                            │
-                            ▼
-                   Amazon EC2 Instance
-                     Ubuntu Linux
-                            │
-                            ▼
-                         HestiaCP
-                            │
-                            ▼
-                    Nginx / Apache
-                            │
-                            ▼
-                    React Production Build
-                            │
-                            ▼
-                       Portfolio Website
-```
+## Certifications and Learning
 
----
+- AWS Cloud Practitioner Essentials
+- End User Computing on AWS — Advanced Topics
+- CCNA Routing and Switching
+- Designing RESTful APIs
+- Git Workflows
+- Flutter Essential Training
+- Building a Website with Laravel, React.js, and Inertia
+- Database Design Fundamentals
+- Creating a Responsive Web Experience
+- HTML and CSS: Creating Forms
+- Learning PHP: Building Dynamic Websites
 
-## 🚀 Local Development
+## Technical Skills
 
-### 1. Clone the Repository
+### Mobile Development
+
+- Flutter
+- Dart
+- Flutter REST API integration
+- Firebase integration
+- Google Play Store deployment
+- Apple App Store deployment
+
+### Frontend Development
+
+- React
+- Next.js
+- JavaScript
+- TypeScript
+- HTML5
+- CSS3
+- Bootstrap
+- Responsive web design
+
+### Backend Development
+
+- Laravel
+- PHP
+- Node.js
+- REST API development
+- JWT and OAuth authentication
+- Third-party API integration
+- Payment gateway integration
+- Microservices architecture
+
+### Databases
+
+- MySQL
+- PostgreSQL
+- Firebase Firestore
+- Database design and optimization
+
+### Cloud and DevOps
+
+- AWS Amplify
+- AWS EC2
+- AWS S3
+- Amazon Bedrock
+- GitHub Actions
+- Git
+- Docker
+- Linux server administration
+- Nginx
+- Apache
+- HestiaCP
+- cPanel
+- WHM
+- Plesk
+
+### AI and Development Tools
+
+- OpenAI
+- Anthropic Claude
+- Amazon Bedrock
+- ChatGPT
+- GitHub Copilot
+- VS Code
+- Postman
+
+### Blockchain and Web3
+
+- Web3 integrations
+- Blockchain wallet integrations
+- Smart-contract interactions
+- Solidity
+- Token and transaction workflows
+
+## Portfolio Technology
+
+This portfolio is built with:
+
+- React 17
+- React Router
+- React Bootstrap
+- Custom responsive CSS
+- React Icons
+- Typewriter Effect
+- tsparticles
+- React PDF
+- GitHub contribution calendar
+- Create React App
+
+## Run Locally
+
+Clone the repository:
 
 ```bash
 git clone https://github.com/cruzerblade95/cruzerblade95_portfolio.git
 ```
 
-### 2. Navigate to the Project
+Open the project directory:
 
 ```bash
 cd cruzerblade95_portfolio
 ```
 
-### 3. Install Dependencies
+Install the dependencies:
 
 ```bash
 npm install
 ```
 
-### 4. Start the Development Server
+Start the development server:
 
 ```bash
 npm start
 ```
 
-The application will be available at:
+The development website will be available at:
 
 ```text
 http://localhost:3000
 ```
 
----
+## Testing
 
-## 📦 Production Build
+Run the automated tests:
 
-To create an optimized production build:
+```bash
+npm test -- --watchAll=false
+```
+
+## Production Build
+
+Create an optimized production build:
 
 ```bash
 npm run build
 ```
 
-The production files are generated inside:
+The generated production files will be available inside:
 
 ```text
 build/
 ```
 
-These optimized files can then be served using a production web server such as Nginx or Apache.
+## Production Deployment
 
----
+The live portfolio is hosted on an AWS EC2 Linux server and managed using
+HestiaCP.
 
-## ☁️ AWS EC2 Deployment
+The production infrastructure includes:
 
-The website is deployed on an AWS EC2 Linux server.
+- AWS EC2
+- Ubuntu Linux
+- Elastic IP
+- HestiaCP
+- Nginx
+- Apache
+- Custom domain configuration
+- DNS records
+- Let’s Encrypt SSL certificate
+- HTTPS
+- Linux file permissions
+- Server resource monitoring
 
-### Deployment Process
+### Deployment Architecture
 
-```text
-Developer
-    │
-    ▼
-GitHub Repository
-    │
-    ▼
-AWS EC2 Ubuntu Server
-    │
-    ▼
-Clone / Pull Repository
-    │
-    ▼
-Install Dependencies
-    │
-    ▼
-npm run build
-    │
-    ▼
-React build/
-    │
-    ▼
-HestiaCP public_html
-    │
-    ▼
-Live Website
+```mermaid
+flowchart TD
+    A[GitHub repository] --> B[AWS EC2 Linux server]
+    B --> C[npm production build]
+    C --> D[HestiaCP web directory]
+    D --> E[Nginx and Apache]
+    E --> F[mybc.tech through HTTPS]
 ```
 
-### Example Deployment Workflow
+### Deployment Commands
+
+Pull the latest changes:
 
 ```bash
 git pull origin master
+```
 
+Install dependencies:
+
+```bash
 npm install
+```
 
+Create the production build:
+
+```bash
 npm run build
-
-rm -rf /home/cruzerblade95/web/mybc.tech/public_html/*
-
-cp -r build/* \
-/home/cruzerblade95/web/mybc.tech/public_html/
 ```
 
-The generated React production files are served from the HestiaCP web directory:
+The generated files from `build/` can then be published to the HestiaCP web
+directory.
 
-```text
-/home/cruzerblade95/web/mybc.tech/public_html/
-```
+## Contact
 
----
+- Email: [nabilajwad10@gmail.com](mailto:nabilajwad10@gmail.com)
+- LinkedIn: [nabil-ajwad-rosedi](https://www.linkedin.com/in/nabil-ajwad-rosedi-4bbb621a2/)
+- GitHub: [cruzerblade95](https://github.com/cruzerblade95)
+- Portfolio: [mybc.tech](https://mybc.tech)
 
-## 🔐 Infrastructure & Server Configuration
+## License
 
-The production environment includes:
-
-* AWS EC2 compute instance
-* Ubuntu Linux
-* Elastic IP address
-* HestiaCP hosting control panel
-* Nginx and Apache web services
-* DNS configuration for custom domain
-* Let's Encrypt SSL certificate
-* HTTPS access
-* Linux file permissions and ownership
-* Server-side resource and memory management
-
-This project gave me practical experience managing a cloud-hosted application from development through production deployment.
-
----
-
-## 🧠 Engineering Challenges
-
-### 1. Deploying a React Application on a Self-Managed Server
-
-Instead of relying on platforms such as managed frontend hosting, I configured the application to run on my own AWS EC2 server.
-
-This required understanding:
-
-* React production builds
-* Node.js and npm
-* Linux file systems
-* Web server directories
-* File ownership and permissions
-* Static frontend deployment
-
----
-
-### 2. Managing Limited Server Resources
-
-Building a React application on a small EC2 instance required monitoring available memory and configuring swap space to prevent the Node.js build process from exhausting system memory.
-
-This provided practical experience with:
-
-* Linux memory management
-* Swap configuration
-* Process monitoring
-* Resource optimization
-
----
-
-### 3. DNS and HTTPS Configuration
-
-The custom domain was connected to the EC2 instance through DNS configuration.
-
-The production setup includes:
-
-```text
-mybc.tech
-    │
-    ▼
-DNS A Record
-    │
-    ▼
-AWS Elastic IP
-    │
-    ▼
-EC2 Instance
-```
-
-HTTPS was configured using a Let's Encrypt SSL certificate.
-
----
-
-## 📚 What This Project Demonstrates
-
-This project demonstrates my ability to work across the complete application lifecycle:
-
-```text
-Frontend Development
-        │
-        ▼
-React.js Application
-        │
-        ▼
-Version Control
-        │
-        ▼
-Git & GitHub
-        │
-        ▼
-Cloud Infrastructure
-        │
-        ▼
-AWS EC2
-        │
-        ▼
-Linux Administration
-        │
-        ▼
-Web Server Configuration
-        │
-        ▼
-DNS & SSL
-        │
-        ▼
-Production Deployment
-```
-
----
-
-## 🎯 Future Improvements
-
-Planned improvements include:
-
-* [ ] GitHub Actions CI/CD pipeline
-* [ ] Automated deployment to AWS EC2
-* [ ] Docker containerization
-* [ ] AWS CloudFront CDN
-* [ ] Amazon S3 for static assets
-* [ ] Automated testing
-* [ ] Performance monitoring
-* [ ] Infrastructure monitoring
-* [ ] Automated backup strategy
-* [ ] Improved deployment rollback process
-
----
-
-## 👨‍💻 About Me
-
-I am a Software Engineer with experience building software solutions across web, mobile, blockchain, and cloud environments.
-
-My technical experience includes:
-
-* React.js
-* Flutter
-* Laravel
-* PHP
-* REST APIs
-* MySQL
-* Blockchain development
-* AWS
-* Linux server administration
-* Git and GitHub
-
-I enjoy building complete solutions — from developing the application to deploying and managing it in a production environment.
-
----
-
-## 📫 Connect With Me
-
-* 🌐 Portfolio: https://mybc.tech
-* 💻 GitHub: https://github.com/cruzerblade95
-
----
-
-## 📄 License
-
-This project is for personal portfolio and educational purposes.
+This repository contains personal portfolio content. Please contact me before
+reusing personal information, branding, or project descriptions.
