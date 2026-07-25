@@ -1,8 +1,12 @@
 import React from "react";
-import { Col, Row } from "react-bootstrap";
 import { FaLinux } from "react-icons/fa";
-import { SiGithub, SiNginx, SiPostman } from "react-icons/si";
+import {
+  SiGithub,
+  SiNginx,
+  SiPostman,
+} from "react-icons/si";
 import vsCode from "../../Assets/TechIcons/vscode.svg";
+import Reveal from "../Reveal";
 
 const tools = [
   {
@@ -25,29 +29,35 @@ const tools = [
 
 function Toolstack() {
   return (
-    <Row style={{ justifyContent: "center", paddingBottom: "50px" }}>
-      {tools.map((tool) => {
+    <div className="tool-grid">
+      {tools.map((tool, index) => {
         const Icon = tool.icon;
 
         return (
-          <Col xs={4} md={2} className="tech-icons" key={tool.name}>
-            <Icon aria-label={tool.name} />
-
-            <div className="tech-icons-text">{tool.name}</div>
-          </Col>
+          <Reveal
+            className="tool-card"
+            delay={index * 60}
+            key={tool.name}
+          >
+            <Icon aria-hidden="true" />
+            <span>{tool.name}</span>
+          </Reveal>
         );
       })}
 
-      <Col xs={4} md={2} className="tech-icons">
+      <Reveal
+        className="tool-card"
+        delay={tools.length * 60}
+      >
         <img
           src={vsCode}
-          alt="Visual Studio Code"
-          className="tech-icon-images"
+          alt=""
+          aria-hidden="true"
         />
 
-        <div className="tech-icons-text">VS Code</div>
-      </Col>
-    </Row>
+        <span>VS Code</span>
+      </Reveal>
+    </div>
   );
 }
 

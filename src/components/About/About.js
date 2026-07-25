@@ -1,225 +1,356 @@
 import React from "react";
-import { Container, Row, Col } from "react-bootstrap";
+import { Container } from "react-bootstrap";
+import {
+  BsAward,
+  BsCheck2Circle,
+  BsCompass,
+  BsPeople,
+} from "react-icons/bs";
 import Particle from "../Particle";
+import Reveal from "../Reveal";
 import Github from "./Github";
 import Techstack from "./Techstack";
-import AboutCard from "./AboutCard";
 import Toolstack from "./Toolstack";
-import laptopImg from "../../Assets/about.png";
+
+const experience = [
+  {
+    period: "Jan 2025 — Jun 2026",
+    role: "Senior Software Engineer",
+    company: "Megah Fintech Sdn. Bhd.",
+    description:
+      "Led fintech feature development, designed secure payment APIs, integrated blockchain workflows, and contributed to architecture planning and code reviews.",
+    skills: [
+      "Fintech",
+      "REST APIs",
+      "Blockchain",
+      "Architecture",
+    ],
+  },
+  {
+    period: "Feb 2023 — Dec 2024",
+    role: "Software Engineer",
+    company: "MyRich Dynasty Networks Sdn. Bhd.",
+    description:
+      "Built Laravel enterprise systems and Flutter apps, improved existing products, and contributed to a React SPA delivered through AWS Amplify and GitHub CI/CD.",
+    skills: [
+      "Flutter",
+      "Laravel",
+      "React",
+      "AWS",
+    ],
+  },
+  {
+    period: "Mar 2022 — Sep 2022",
+    role: "Full-Stack Developer",
+    company: "AdEasy",
+    description:
+      "Translated business requirements into tested website improvements while collaborating through sprint planning and iterative delivery.",
+    skills: [
+      "Full-stack",
+      "Agile",
+      "Testing",
+      "Delivery",
+    ],
+  },
+  {
+    period: "Dec 2020 — Feb 2022",
+    role: "Programmer",
+    company: "PocketData (M) Sdn. Bhd.",
+    description:
+      "Developed and maintained application features in a Scrum team, turning user requirements into reliable and tested software solutions.",
+    skills: [
+      "Scrum",
+      "Development",
+      "Testing",
+      "Collaboration",
+    ],
+  },
+];
+
+const certifications = [
+  {
+    title: "AWS Cloud Practitioner Essentials",
+    category: "Cloud",
+  },
+  {
+    title:
+      "End User Computing on AWS — Advanced Topics",
+    category: "Cloud",
+  },
+  {
+    title: "CCNA Routing and Switching",
+    category: "Networking",
+  },
+  {
+    title: "Designing RESTful APIs",
+    category: "Backend",
+  },
+  {
+    title: "Flutter Essential Training",
+    category: "Mobile",
+  },
+  {
+    title: "Database Design Fundamentals",
+    category: "Database",
+  },
+];
+
+const principles = [
+  {
+    icon: BsCompass,
+    title: "Product thinking",
+    text:
+      "I connect technical choices to business outcomes and user needs.",
+  },
+  {
+    icon: BsCheck2Circle,
+    title: "Production quality",
+    text:
+      "I value secure architecture, readable code, testing, and reliability.",
+  },
+  {
+    icon: BsPeople,
+    title: "Clear collaboration",
+    text:
+      "I communicate trade-offs and work effectively across product teams.",
+  },
+];
 
 function About() {
   return (
-    <>
-      <Particle />
+    <main className="page">
+      <section className="page-hero">
+        <Particle />
 
-      <Container fluid className="about-section">
         <Container>
-          <Row style={{ justifyContent: "center", padding: "10px" }}>
-            <Col
-              md={7}
-              style={{
-                justifyContent: "center",
-                paddingTop: "30px",
-                paddingBottom: "50px",
-              }}
-            >
-              <h1
-                style={{
-                  fontSize: "2.1em",
-                  paddingBottom: "20px",
-                }}
-              >
-                Know Who <strong className="purple">I&apos;M</strong>
-              </h1>
+          <Reveal>
+            <span className="eyebrow">
+              About me
+            </span>
 
-              <AboutCard />
-            </Col>
+            <h1>
+              A software engineer focused on
+              <span className="gradient-text">
+                {" "}
+                meaningful outcomes.
+              </span>
+            </h1>
 
-            <Col
-              md={5}
-              style={{
-                paddingTop: "120px",
-                paddingBottom: "50px",
-              }}
-              className="about-img"
-            >
-              <img
-                src={laptopImg}
-                alt="Software development workspace"
-                className="img-fluid"
-              />
-            </Col>
-          </Row>
+            <p>
+              I combine full-stack, mobile, cloud,
+              fintech, Web3, and AI experience to build
+              products that are useful, maintainable,
+              and ready for real users.
+            </p>
+          </Reveal>
 
-          <h1 className="project-heading">
-            Professional <strong className="purple">Skillset</strong>
-          </h1>
+          <Reveal
+            className="about-stat-row"
+            delay={140}
+          >
+            <div>
+              <strong>5+</strong>
+              <span>Years of experience</span>
+            </div>
+
+            <div>
+              <strong>4</strong>
+              <span>Professional roles</span>
+            </div>
+
+            <div>
+              <strong>Full cycle</strong>
+              <span>Idea to deployment</span>
+            </div>
+          </Reveal>
+        </Container>
+      </section>
+
+      <section className="section">
+        <Container>
+          <div className="about-story-grid">
+            <Reveal className="about-story">
+              <span className="eyebrow">
+                My approach
+              </span>
+
+              <h2>
+                Technology should make difficult work
+                feel simple.
+              </h2>
+
+              <p>
+                I started my career building and
+                maintaining business software, then
+                expanded into mobile products, fintech
+                platforms, blockchain integrations,
+                AWS delivery, and AI tooling.
+              </p>
+
+              <p>
+                That range helps me look beyond
+                individual screens or endpoints. I
+                consider the complete system: user
+                experience, data flow, security,
+                deployment, monitoring, and long-term
+                maintainability.
+              </p>
+            </Reveal>
+
+            <div className="principles-grid">
+              {principles.map(
+                (principle, index) => {
+                  const Icon = principle.icon;
+
+                  return (
+                    <Reveal
+                      className="principle-card"
+                      delay={index * 90}
+                      direction="right"
+                      key={principle.title}
+                    >
+                      <Icon />
+
+                      <div>
+                        <h3>{principle.title}</h3>
+                        <p>{principle.text}</p>
+                      </div>
+                    </Reveal>
+                  );
+                }
+              )}
+            </div>
+          </div>
+        </Container>
+      </section>
+
+      <section className="section section-muted">
+        <Container>
+          <Reveal className="section-heading">
+            <span className="eyebrow">
+              Technical toolkit
+            </span>
+
+            <h2>
+              Technologies I use to
+              <span className="gradient-text">
+                {" "}
+                deliver products.
+              </span>
+            </h2>
+          </Reveal>
 
           <Techstack />
 
-          <h1 className="project-heading">
-            <strong className="purple">Tools</strong> I Use
-          </h1>
+          <Reveal className="tool-heading">
+            <h3>
+              Development and delivery tools
+            </h3>
+          </Reveal>
 
           <Toolstack />
+        </Container>
+      </section>
 
-          <h1 className="project-heading">
-            Career <strong className="purple">Experience</strong>
-          </h1>
+      <section className="section">
+        <Container>
+          <Reveal className="section-heading">
+            <span className="eyebrow">
+              Career journey
+            </span>
 
-          <Row className="experience-grid">
-            <Col md={6}>
-              <div className="experience-card">
-                <span className="experience-date">
-                  January 2025 – June 2026
-                </span>
+            <h2>
+              Experience built through real delivery.
+            </h2>
+          </Reveal>
 
-                <h3>Senior Software Engineer</h3>
+          <div className="timeline">
+            {experience.map((item, index) => (
+              <Reveal
+                className="timeline-item"
+                delay={index * 80}
+                key={`${item.company}-${item.role}`}
+              >
+                <div className="timeline-marker">
+                  <span />
+                </div>
 
-                <h4>Megah Fintech Sdn. Bhd.</h4>
+                <div className="timeline-period">
+                  {item.period}
+                </div>
 
-                <p>
-                  Led the development of fintech features, designed secure
-                  payment-related APIs, integrated blockchain workflows, and
-                  contributed to software architecture planning and code
-                  reviews.
-                </p>
-              </div>
-            </Col>
+                <div className="timeline-card">
+                  <div className="timeline-card-heading">
+                    <div>
+                      <h3>{item.role}</h3>
+                      <span>{item.company}</span>
+                    </div>
 
-            <Col md={6}>
-              <div className="experience-card">
-                <span className="experience-date">
-                  February 2023 – December 2024
-                </span>
+                    <span className="timeline-index">
+                      {String(index + 1).padStart(
+                        2,
+                        "0"
+                      )}
+                    </span>
+                  </div>
 
-                <h3>Software Engineer</h3>
+                  <p>{item.description}</p>
 
-                <h4>MyRich Dynasty Networks Sdn. Bhd.</h4>
+                  <div className="tag-list">
+                    {item.skills.map((skill) => (
+                      <span key={skill}>
+                        {skill}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+              </Reveal>
+            ))}
+          </div>
+        </Container>
+      </section>
 
-                <p>
-                  Built enterprise systems using Laravel, developed
-                  cross-platform Flutter applications, improved existing
-                  features, and contributed to a React application deployed
-                  through AWS Amplify and GitHub-based CI/CD.
-                </p>
-              </div>
-            </Col>
+      <section className="section section-muted">
+        <Container>
+          <Reveal className="section-heading">
+            <span className="eyebrow">
+              Continuous learning
+            </span>
 
-            <Col md={6}>
-              <div className="experience-card">
-                <span className="experience-date">
-                  March 2022 – September 2022
-                </span>
+            <h2>
+              Certifications that strengthen my
+              foundations.
+            </h2>
+          </Reveal>
 
-                <h3>Full-Stack Developer</h3>
+          <div className="certification-grid">
+            {certifications.map(
+              (certification, index) => (
+                <Reveal
+                  className="certification-card"
+                  delay={index * 60}
+                  key={certification.title}
+                >
+                  <div className="certification-icon">
+                    <BsAward />
+                  </div>
 
-                <h4>AdEasy</h4>
+                  <span>
+                    {certification.category}
+                  </span>
 
-                <p>
-                  Translated business and departmental requirements into tested
-                  website improvements while collaborating through sprint
-                  planning and iterative software delivery.
-                </p>
-              </div>
-            </Col>
-
-            <Col md={6}>
-              <div className="experience-card">
-                <span className="experience-date">
-                  December 2020 – February 2022
-                </span>
-
-                <h3>Programmer</h3>
-
-                <h4>PocketData (M) Sdn. Bhd.</h4>
-
-                <p>
-                  Developed and maintained application features in a Scrum
-                  environment, analyzed user requirements, and delivered
-                  reliable and tested software solutions.
-                </p>
-              </div>
-            </Col>
-          </Row>
-
-          <h1 className="project-heading">
-            Certifications &amp;{" "}
-            <strong className="purple">Professional Learning</strong>
-          </h1>
-
-          <Row className="certification-grid">
-            <Col md={4}>
-              <div className="certification-card">
-                <h3>AWS Cloud Practitioner Essentials</h3>
-
-                <p>
-                  Covered foundational AWS cloud concepts, core services,
-                  security, architecture, support, and pricing.
-                </p>
-              </div>
-            </Col>
-
-            <Col md={4}>
-              <div className="certification-card">
-                <h3>End User Computing on AWS</h3>
-
-                <p>
-                  Completed advanced learning covering AWS end-user computing
-                  services and cloud-based workspace solutions.
-                </p>
-              </div>
-            </Col>
-
-            <Col md={4}>
-              <div className="certification-card">
-                <h3>CCNA Routing and Switching</h3>
-
-                <p>
-                  Learned networking fundamentals, IPv4 and IPv6, VLANs,
-                  routing, switching, security, and network troubleshooting.
-                </p>
-              </div>
-            </Col>
-
-            <Col md={4}>
-              <div className="certification-card">
-                <h3>Designing RESTful APIs</h3>
-
-                <p>
-                  Studied resource-oriented API design, HTTP methods,
-                  authentication, response structures, and maintainability.
-                </p>
-              </div>
-            </Col>
-
-            <Col md={4}>
-              <div className="certification-card">
-                <h3>Flutter Essential Training</h3>
-
-                <p>
-                  Covered cross-platform application development using Flutter,
-                  Dart, responsive interfaces, and reusable widgets.
-                </p>
-              </div>
-            </Col>
-
-            <Col md={4}>
-              <div className="certification-card">
-                <h3>Database Design Fundamentals</h3>
-
-                <p>
-                  Studied relational database design, data relationships,
-                  normalization, queries, and maintainable data structures.
-                </p>
-              </div>
-            </Col>
-          </Row>
+                  <h3>
+                    {certification.title}
+                  </h3>
+                </Reveal>
+              )
+            )}
+          </div>
 
           <Github />
         </Container>
-      </Container>
-    </>
+      </section>
+    </main>
   );
 }
 

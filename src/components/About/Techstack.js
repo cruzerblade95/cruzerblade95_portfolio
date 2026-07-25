@@ -1,5 +1,4 @@
 import React from "react";
-import { Col, Row } from "react-bootstrap";
 import {
   SiAmazonaws,
   SiDart,
@@ -18,6 +17,7 @@ import {
   SiSolidity,
   SiTypescript,
 } from "react-icons/si";
+import Reveal from "../Reveal";
 
 const technologies = [
   {
@@ -88,26 +88,27 @@ const technologies = [
 
 function Techstack() {
   return (
-    <Row style={{ justifyContent: "center", paddingBottom: "50px" }}>
-      {technologies.map((technology) => {
-        const Icon = technology.icon;
+    <div className="technology-grid">
+      {technologies.map(
+        (technology, index) => {
+          const Icon = technology.icon;
 
-        return (
-          <Col
-            xs={4}
-            md={2}
-            className="tech-icons"
-            key={technology.name}
-          >
-            <Icon aria-label={technology.name} />
+          return (
+            <Reveal
+              className="technology-card"
+              delay={(index % 8) * 45}
+              key={technology.name}
+            >
+              <Icon aria-hidden="true" />
 
-            <div className="tech-icons-text">
-              {technology.name}
-            </div>
-          </Col>
-        );
-      })}
-    </Row>
+              <span>
+                {technology.name}
+              </span>
+            </Reveal>
+          );
+        }
+      )}
+    </div>
   );
 }
 

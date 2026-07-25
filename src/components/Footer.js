@@ -1,74 +1,135 @@
 import React from "react";
-import { Container, Row, Col } from "react-bootstrap";
-import { AiFillGithub, AiOutlineMail } from "react-icons/ai";
+import { Container } from "react-bootstrap";
+import { Link } from "react-router-dom";
+import {
+  AiFillGithub,
+  AiOutlineMail,
+} from "react-icons/ai";
 import { FaLinkedinIn } from "react-icons/fa";
-import { CgWebsite } from "react-icons/cg";
+import { BsArrowUpRight } from "react-icons/bs";
+import Reveal from "./Reveal";
 
 function Footer() {
-  const currentYear = new Date().getFullYear();
+  const currentYear =
+    new Date().getFullYear();
 
   return (
-    <Container fluid className="footer">
-      <Row>
-        <Col md="4" className="footer-copywright">
-          <h3>Designed and developed by Nabil Ajwad Rosedi</h3>
-        </Col>
+    <footer className="site-footer">
+      <Container>
+        <Reveal className="footer-cta">
+          <div>
+            <span className="eyebrow">
+              Build something valuable
+            </span>
 
-        <Col md="4" className="footer-copywright">
-          <h3>Copyright © {currentYear} Nabil Ajwad</h3>
-        </Col>
+            <h2>
+              Have a product, platform, or
+              engineering challenge?
+            </h2>
+          </div>
 
-        <Col md="4" className="footer-body">
-          <ul className="footer-icons">
-            <li className="social-icons">
-              <a
-                href="https://github.com/cruzerblade95"
-                style={{ color: "white" }}
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="GitHub profile"
-              >
-                <AiFillGithub />
-              </a>
-            </li>
+          <a
+            className="button button-light"
+            href="mailto:nabilajwad10@gmail.com"
+          >
+            Start a conversation
+            <BsArrowUpRight />
+          </a>
+        </Reveal>
 
-            <li className="social-icons">
-              <a
-                href="https://www.linkedin.com/in/nabil-ajwad-rosedi-4bbb621a2/"
-                style={{ color: "white" }}
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="LinkedIn profile"
-              >
-                <FaLinkedinIn />
-              </a>
-            </li>
+        <div className="footer-main">
+          <div className="footer-brand">
+            <Link
+              className="brand-mark"
+              to="/"
+            >
+              <span>NA</span>
 
-            <li className="social-icons">
-              <a
-                href="https://mybc.tech"
-                style={{ color: "white" }}
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="Portfolio website"
-              >
-                <CgWebsite />
-              </a>
-            </li>
+              <div>
+                <strong>Nabil Ajwad</strong>
+                <small>Software Engineer</small>
+              </div>
+            </Link>
 
-            <li className="social-icons">
-              <a
-                href="mailto:nabilajwad10@gmail.com"
-                style={{ color: "white" }}
-                aria-label="Send email"
-              >
-                <AiOutlineMail />
-              </a>
-            </li>
-          </ul>
-        </Col>
-      </Row>
-    </Container>
+            <p>
+              Building dependable products across
+              AI, web, mobile, cloud, fintech, and
+              Web3.
+            </p>
+          </div>
+
+          <div className="footer-nav">
+            <span>Navigate</span>
+
+            <Link to="/">Home</Link>
+            <Link to="/about">About</Link>
+            <Link to="/project">Projects</Link>
+            <Link to="/resume">Résumé</Link>
+          </div>
+
+          <div className="footer-nav">
+            <span>Connect</span>
+
+            <a
+              href="https://github.com/cruzerblade95"
+              target="_blank"
+              rel="noreferrer"
+            >
+              GitHub
+            </a>
+
+            <a
+              href="https://www.linkedin.com/in/nabil-ajwad-rosedi-4bbb621a2/"
+              target="_blank"
+              rel="noreferrer"
+            >
+              LinkedIn
+            </a>
+
+            <a href="mailto:nabilajwad10@gmail.com">
+              Email
+            </a>
+          </div>
+        </div>
+
+        <div className="footer-bottom">
+          <span>
+            © {currentYear} Nabil Ajwad Rosedi
+          </span>
+
+          <span>
+            Designed and engineered in Malaysia
+          </span>
+
+          <div className="footer-socials">
+            <a
+              href="https://github.com/cruzerblade95"
+              target="_blank"
+              rel="noreferrer"
+              aria-label="GitHub"
+            >
+              <AiFillGithub />
+            </a>
+
+            <a
+              href="https://www.linkedin.com/in/nabil-ajwad-rosedi-4bbb621a2/"
+              target="_blank"
+              rel="noreferrer"
+              aria-label="LinkedIn"
+            >
+              <FaLinkedinIn />
+            </a>
+
+            <a
+              href="mailto:nabilajwad10@gmail.com"
+              aria-label="Email"
+            >
+              <AiOutlineMail />
+            </a>
+          </div>
+        </div>
+      </Container>
+    </footer>
   );
 }
 

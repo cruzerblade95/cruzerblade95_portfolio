@@ -9,12 +9,14 @@ function Type() {
           "Senior Software Engineer",
           "AI Full-Stack Developer",
           "Flutter Developer",
-          "Laravel & React Developer",
-          "AWS, APIs & Web3 Developer",
+          "Laravel & React Engineer",
+          "Cloud & Web3 Builder",
         ],
         autoStart: true,
         loop: true,
-        deleteSpeed: 50,
+        delay: 45,
+        deleteSpeed: 30,
+        cursor: "▍",
       }}
     />
   );

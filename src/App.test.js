@@ -1,14 +1,25 @@
-import { render, screen } from "@testing-library/react";
+import {
+  render,
+  screen,
+} from "@testing-library/react";
 import App from "./App";
+
+jest.mock(
+  "./components/Particle",
+  () =>
+    function MockParticle() {
+      return null;
+    }
+);
 
 test("renders Nabil's professional portfolio", () => {
   render(<App />);
 
   expect(
-    screen.getAllByText(/NABIL AJWAD ROSEDI/i).length
+    screen.getAllByText(/Nabil Ajwad/i).length
   ).toBeGreaterThan(0);
 
   expect(
-    screen.getAllByText(/Senior Software Engineer/i).length
-  ).toBeGreaterThan(0);
+    screen.getByText(/Explore my work/i)
+  ).toBeInTheDocument();
 });

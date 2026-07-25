@@ -1,67 +1,94 @@
 import React from "react";
-import Card from "react-bootstrap/Card";
-import Button from "react-bootstrap/Button";
-import { CgWebsite } from "react-icons/cg";
-import { BsGithub } from "react-icons/bs";
+import {
+  BsArrowUpRight,
+  BsGithub,
+} from "react-icons/bs";
+import Reveal from "../Reveal";
 
-function ProjectCard(props) {
+function ProjectCard({
+  index,
+  title,
+  category,
+  description,
+  technologies,
+  ghLink,
+  demoLink,
+  demoLabel = "Live project",
+  accent = "blue",
+  featured = false,
+}) {
   return (
-    <Card className="project-card-view">
-      {props.imgPath && (
-        <Card.Img
-          variant="top"
-          src={props.imgPath}
-          alt={`${props.title} project`}
-        />
-      )}
+    <Reveal
+      className={`project-showcase-card accent-${accent} ${
+        featured ? "project-featured" : ""
+      }`}
+      delay={(index % 3) * 80}
+    >
+      <div className="project-card-visual">
+        <span className="project-card-index">
+          {String(index + 1).padStart(2, "0")}
+        </span>
 
-      <Card.Body>
-        <Card.Title>{props.title}</Card.Title>
+        <div
+          className="project-visual-lines"
+          aria-hidden="true"
+        >
+          <span />
+          <span />
+          <span />
+        </div>
 
-        <Card.Text style={{ textAlign: "justify" }}>
-          {props.description}
-        </Card.Text>
+        <div className="project-visual-label">
+          {category}
+        </div>
+      </div>
 
-        {props.technologies && (
-          <div className="project-tech-list">
-            {props.technologies.map((technology) => (
-              <span className="project-tech-tag" key={technology}>
-                {technology}
-              </span>
-            ))}
-          </div>
-        )}
+      <div className="project-card-content">
+        <div className="project-card-heading">
+          <span>{category}</span>
 
-        <div className="project-buttons">
-          {props.ghLink && (
-            <Button
-              variant="primary"
-              href={props.ghLink}
-              target="_blank"
-              rel="noreferrer"
-            >
-              <BsGithub /> &nbsp;
-              GitHub
-            </Button>
-          )}
-
-          {props.demoLink && (
-            <Button
-              variant="primary"
-              href={props.demoLink}
-              target="_blank"
-              rel="noreferrer"
-              style={{
-                marginLeft: props.ghLink ? "10px" : "0",
-              }}
-            >
-              <CgWebsite /> &nbsp;
-              {props.demoLabel || "Live"}
-            </Button>
+          {featured && (
+            <strong>Featured</strong>
           )}
         </div>
-      </Card.Body>
-    </Card>
+
+        <h2>{title}</h2>
+
+        <p>{description}</p>
+
+        <div className="tag-list">
+          {technologies.map((technology) => (
+            <span key={technology}>
+              {technology}
+            </span>
+          ))}
+        </div>
+
+        <div className="project-card-links">
+          {ghLink && (
+            <a
+              href={ghLink}
+              target="_blank"
+              rel="noreferrer"
+            >
+              <BsGithub />
+              Source code
+            </a>
+          )}
+
+          {demoLink && (
+            <a
+              href={demoLink}
+              target="_blank"
+              rel="noreferrer"
+            >
+              {demoLabel}
+              <BsArrowUpRight />
+            </a>
+          )}
+        </div>
+      </div>
+    </Reveal>
   );
 }
 

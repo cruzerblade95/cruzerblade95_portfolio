@@ -1,66 +1,158 @@
 import React from "react";
-import { Container, Row, Col } from "react-bootstrap";
-import myImg from "../../Assets/avatar.svg";
-import Tilt from "react-parallax-tilt";
+import { Container } from "react-bootstrap";
+import { Link } from "react-router-dom";
+import {
+  BsArrowRight,
+  BsBoxes,
+  BsCodeSlash,
+  BsCpu,
+  BsPhone,
+} from "react-icons/bs";
+import Reveal from "../Reveal";
+
+const capabilities = [
+  {
+    icon: BsCodeSlash,
+    number: "01",
+    title: "Full-stack engineering",
+    description:
+      "Scalable React and Laravel products backed by well-structured APIs, authentication, and reliable databases.",
+    tags: [
+      "React",
+      "Laravel",
+      "TypeScript",
+      "REST APIs",
+    ],
+  },
+  {
+    icon: BsPhone,
+    number: "02",
+    title: "Mobile product delivery",
+    description:
+      "Cross-platform Flutter applications designed, integrated, tested, and maintained through app-store releases.",
+    tags: [
+      "Flutter",
+      "Dart",
+      "Firebase",
+      "App Stores",
+    ],
+  },
+  {
+    icon: BsCpu,
+    number: "03",
+    title: "AI and automation",
+    description:
+      "Practical AI features and developer tooling built with provider APIs, AWS Bedrock, and production safeguards.",
+    tags: [
+      "AI SDKs",
+      "Bedrock",
+      "OpenAI",
+      "Anthropic",
+    ],
+  },
+  {
+    icon: BsBoxes,
+    number: "04",
+    title: "Cloud and Web3 systems",
+    description:
+      "Cloud deployments, fintech workflows, wallet integrations, and blockchain-connected product experiences.",
+    tags: [
+      "AWS",
+      "Linux",
+      "Fintech",
+      "Web3",
+    ],
+  },
+];
 
 function Home2() {
   return (
-    <Container fluid className="home-about-section" id="about">
+    <section
+      className="section section-muted"
+      id="home-about"
+    >
       <Container>
-        <Row>
-          <Col md={8} className="home-about-description">
-            <h1 style={{ fontSize: "2.6em" }}>
-              LET ME <span className="purple">INTRODUCE</span> MYSELF
-            </h1>
+        <Reveal className="section-heading">
+          <span className="eyebrow">
+            What I bring
+          </span>
 
-            <p className="home-about-body">
-              I’m Nabil Ajwad, a Senior Software Engineer with more than five
-              years of experience delivering web, mobile, fintech, and
-              cloud-based products.
-              <br />
-              <br />
+          <h2>
+            Engineering across the
+            <span className="gradient-text">
+              {" "}
+              complete product lifecycle.
+            </span>
+          </h2>
 
-              My experience includes
-              <i>
-                <b className="purple">
-                  {" "}
-                  Flutter, Laravel, PHP, React, TypeScript, REST APIs, Firebase,
-                  AWS, MySQL, and PostgreSQL
-                </b>
-              </i>
-              , with a strong focus on secure payments, API-driven architecture,
-              and reliable production delivery.
-              <br />
-              <br />
+          <p>
+            I translate business problems into secure,
+            maintainable products and stay involved from the
+            first technical decision through deployment and
+            continuous improvement.
+          </p>
+        </Reveal>
 
-              I’ve developed cross-platform applications released on Google
-              Play and the Apple App Store, built enterprise management
-              platforms, integrated blockchain workflows, and deployed
-              applications to AWS.
-              <br />
-              <br />
+        <div className="capability-grid">
+          {capabilities.map(
+            (capability, index) => {
+              const Icon = capability.icon;
 
-              I’m currently expanding my experience into
-              <b className="purple">
-                {" "}
-                AI-powered applications, developer tools, cloud-native
-                full-stack systems, and business process automation.
-              </b>
-            </p>
-          </Col>
+              return (
+                <Reveal
+                  className="capability-card"
+                  delay={index * 80}
+                  key={capability.title}
+                >
+                  <div className="capability-card-top">
+                    <div className="capability-icon">
+                      <Icon />
+                    </div>
 
-          <Col md={4} className="myAvtar">
-            <Tilt>
-              <img
-                src={myImg}
-                className="img-fluid"
-                alt="Nabil Ajwad developer avatar"
-              />
-            </Tilt>
-          </Col>
-        </Row>
+                    <span className="capability-number">
+                      {capability.number}
+                    </span>
+                  </div>
+
+                  <h3>{capability.title}</h3>
+
+                  <p>{capability.description}</p>
+
+                  <div className="tag-list">
+                    {capability.tags.map((tag) => (
+                      <span key={tag}>
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
+                </Reveal>
+              );
+            }
+          )}
+        </div>
+
+        <Reveal className="home-cta">
+          <div>
+            <span className="eyebrow">
+              Selected work
+            </span>
+
+            <h2>
+              See how I turn complex requirements
+              into working products.
+            </h2>
+          </div>
+
+          <Link
+            className="button button-light"
+            to="/project"
+          >
+            View case studies
+            <BsArrowRight />
+          </Link>
+        </Reveal>
       </Container>
-    </Container>
+    </section>
   );
 }
 
