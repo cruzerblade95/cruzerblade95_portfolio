@@ -1,39 +1,34 @@
 import React, { useEffect, useState } from "react";
-import Navbar from "react-bootstrap/Navbar";
-import Nav from "react-bootstrap/Nav";
-import Container from "react-bootstrap/Container";
+import {
+  Container,
+  Nav,
+  Navbar as BootstrapNavbar,
+} from "react-bootstrap";
 import { Link, useLocation } from "react-router-dom";
-import { BsArrowUpRight } from "react-icons/bs";
+import {
+  AiFillGithub,
+  AiOutlineHome,
+  AiOutlineUser,
+} from "react-icons/ai";
+import {
+  FiBriefcase,
+  FiFileText,
+  FiMenu,
+  FiX,
+} from "react-icons/fi";
 
-const navigationLinks = [
-  {
-    label: "Home",
-    path: "/",
-  },
-  {
-    label: "About",
-    path: "/about",
-  },
-  {
-    label: "Projects",
-    path: "/project",
-  },
-  {
-    label: "Résumé",
-    path: "/resume",
-  },
-];
+import logo from "../Assets/logo.png";
 
-function NavBar() {
+function Navbar() {
   const [expanded, setExpanded] = useState(false);
   const [scrolled, setScrolled] = useState(false);
 
   const location = useLocation();
 
   useEffect(() => {
-    function handleScroll() {
-      setScrolled(window.scrollY > 24);
-    }
+    const handleScroll = () => {
+      setScrolled(window.scrollY >= 50);
+    };
 
     handleScroll();
 
@@ -50,69 +45,133 @@ function NavBar() {
     setExpanded(false);
   }, [location.pathname]);
 
+  const isActiveRoute = (route) => {
+    if (route === "/") {
+      return location.pathname === "/";
+    }
+
+    if (route === "/project") {
+      return location.pathname.startsWith("/project");
+    }
+
+    return location.pathname === route;
+  };
+
+  const closeNavigation = () => {
+    setExpanded(false);
+  };
+
   return (
-    <Navbar
+    <BootstrapNavbar
       expanded={expanded}
       fixed="top"
       expand="md"
-      className={`site-navbar ${
-        scrolled ? "site-navbar-scrolled" : ""
+      className={`portfolio-navbar ${
+        scrolled ? "portfolio-navbar-scrolled" : ""
       }`}
     >
-      <Container>
-        <Navbar.Brand
+      <Container className="navbar-inner">
+        <BootstrapNavbar.Brand
           as={Link}
           to="/"
-          className="brand-mark"
+          onClick={closeNavigation}
+          className="portfolio-brand"
+          aria-label="Go to homepage"
         >
-          <span>NA</span>
+          <img
+            src={logo}
+            alt=""
+            className="portfolio-brand-logo"
+          />
 
-          <div>
-            <strong>Nabil Ajwad</strong>
-            <small>Software Engineer</small>
-          </div>
-        </Navbar.Brand>
+          <span className="portfolio-brand-text">
+            cruzerblade<span>95</span>
+          </span>
+        </BootstrapNavbar.Brand>
 
-        <Navbar.Toggle
+        <BootstrapNavbar.Toggle
           aria-controls="portfolio-navigation"
-          aria-label="Toggle navigation"
-          onClick={() => {
-            setExpanded((current) => !current);
-          }}
+          aria-label={
+            expanded
+              ? "Close navigation menu"
+              : "Open navigation menu"
+          }
+          onClick={() => setExpanded((current) => !current)}
+          className="portfolio-navbar-toggle"
         >
-          <span />
-          <span />
-        </Navbar.Toggle>
+          {expanded ? (
+            <FiX aria-hidden="true" />
+          ) : (
+            <FiMenu aria-hidden="true" />
+          )}
+        </BootstrapNavbar.Toggle>
 
-        <Navbar.Collapse id="portfolio-navigation">
-          <Nav className="nav-links">
-            {navigationLinks.map((link) => (
-              <Nav.Link
-                as={Link}
-                to={link.path}
-                key={link.path}
-                className={
-                  location.pathname === link.path
-                    ? "active"
-                    : ""
-                }
-              >
-                {link.label}
-              </Nav.Link>
-            ))}
+        <BootstrapNavbar.Collapse id="portfolio-navigation">
+          <Nav className="ms-auto portfolio-navbar-links">
+            <Nav.Link
+              as={Link}
+              to="/"
+              onClick={closeNavigation}
+              className={
+                isActiveRoute("/") ? "active" : ""
+              }
+            >
+              <AiOutlineHome aria-hidden="true" />
+              <span>Home</span>
+            </Nav.Link>
+
+            <Nav.Link
+              as={Link}
+              to="/about"
+              onClick={closeNavigation}
+              className={
+                isActiveRoute("/about") ? "active" : ""
+              }
+            >
+              <AiOutlineUser aria-hidden="true" />
+              <span>About</span>
+            </Nav.Link>
+
+            <Nav.Link
+              as={Link}
+              to="/project"
+              onClick={closeNavigation}
+              className={
+                isActiveRoute("/project") ? "active" : ""
+              }
+            >
+              <FiBriefcase aria-hidden="true" />
+              <span>Projects</span>
+            </Nav.Link>
+
+            <Nav.Link
+              as={Link}
+              to="/resume"
+              onClick={closeNavigation}
+              className={
+                isActiveRoute("/resume") ? "active" : ""
+              }
+            >
+              <FiFileText aria-hidden="true" />
+              <span>Resume</span>
+            </Nav.Link>
+
+            <Nav.Link
+              href="https://github.com/cruzerblade95"
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={closeNavigation}
+              className="navbar-github-link"
+              aria-label="Open Nabil's GitHub profile"
+            >
+              <AiFillGithub aria-hidden="true" />
+              <span>GitHub</span>
+            </Nav.Link>
           </Nav>
-
-          <a
-            className="nav-contact"
-            href="mailto:nabilajwad10@gmail.com"
-          >
-            Let&apos;s talk
-            <BsArrowUpRight />
-          </a>
-        </Navbar.Collapse>
+        </BootstrapNavbar.Collapse>
       </Container>
-    </Navbar>
+    </BootstrapNavbar>
   );
 }
 
-export default NavBar;
+export default Navbar;

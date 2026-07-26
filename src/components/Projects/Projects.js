@@ -1,197 +1,156 @@
-import React from "react";
-import { Container } from "react-bootstrap";
-import { BsArrowUpRight } from "react-icons/bs";
+import React, { useMemo, useState } from "react";
+import { Container, Row, Col } from "react-bootstrap";
+import { FiSearch } from "react-icons/fi";
+
+import PageMeta from "../PageMeta";
 import Particle from "../Particle";
 import Reveal from "../Reveal";
-import ProjectCard from "./ProjectCards";
 
-const projects = [
-  {
-    title: "@cruzerblade95/ai-client",
-    category: "Developer Platform",
-    description:
-      "A TypeScript-first, provider-agnostic AI SDK supporting AWS Bedrock, OpenAI, and Anthropic. Built with retries, timeouts, streaming, structured output, typed errors, tests, and a clean provider architecture.",
-    technologies: [
-      "TypeScript",
-      "AWS Bedrock",
-      "OpenAI",
-      "Anthropic",
-      "Vitest",
-    ],
-    ghLink:
-      "https://github.com/cruzerblade95/ai-client",
-    demoLink:
-      "https://www.npmjs.com/package/@cruzerblade95/ai-client",
-    demoLabel: "View on npm",
-    accent: "blue",
-    featured: true,
-  },
-  {
-    title: "Web3 AI Portfolio",
-    category: "AI · Web3",
-    description:
-      "A multi-chain portfolio analytics platform that combines blockchain wallet data with generative AI insights through a responsive React experience and AWS-backed API.",
-    technologies: [
-      "React",
-      "TypeScript",
-      "AWS",
-      "Bedrock",
-      "Web3",
-    ],
-    ghLink:
-      "https://github.com/cruzerblade95/web3-ai-portfolio",
-    accent: "violet",
-    featured: true,
-  },
-  {
-    title: "E-DA Wallet",
-    category: "Fintech · Mobile",
-    description:
-      "An enterprise e-wallet platform with secure authentication, wallet management, QR payments, transaction history, and dependable mobile-to-backend API integration.",
-    technologies: [
-      "Flutter",
-      "Dart",
-      "Laravel",
-      "MySQL",
-      "REST API",
-    ],
-    ghLink:
-      "https://github.com/cruzerblade95/E-DA-User-App",
-    demoLink:
-      "https://mybc.tech/cruzerblade95/portfolio/e-da-wallet/225",
-    demoLabel: "Case study",
-    accent: "cyan",
-  },
-  {
-    title: "Penang Smart Kariah",
-    category: "Civic · Mobile",
-    description:
-      "A production Flutter application for community and mosque services, integrated with backend APIs and maintained through releases on Google Play and the Apple App Store.",
-    technologies: [
-      "Flutter",
-      "Firebase",
-      "REST API",
-      "App Stores",
-    ],
-    accent: "green",
-  },
-  {
-    title: "SPB MAINPP",
-    category: "Enterprise Platform",
-    description:
-      "A Laravel-based integrated management system supporting organizational workflows through maintainable web modules, structured data, and API-connected services.",
-    technologies: [
-      "Laravel",
-      "PHP",
-      "MySQL",
-      "JavaScript",
-      "REST API",
-    ],
-    demoLink: "https://mims.mainpp.gov.my/",
-    demoLabel: "Visit platform",
-    accent: "orange",
-  },
-  {
-    title: "AWS Portfolio Deployment",
-    category: "Cloud · DevOps",
-    description:
-      "A complete production deployment on a self-managed AWS EC2 Linux server using HestiaCP, Nginx, Apache, DNS, HTTPS, and a custom domain.",
-    technologies: [
-      "React",
-      "AWS EC2",
-      "Linux",
-      "HestiaCP",
-      "Nginx",
-    ],
-    ghLink:
-      "https://github.com/cruzerblade95/cruzerblade95_portfolio",
-    demoLink: "https://mybc.tech",
-    demoLabel: "Live website",
-    accent: "pink",
-  },
-];
+import ProjectCards from "./ProjectCards";
+import ProjectFilters from "./ProjectFilters";
+import ProjectOverviewStats from "./ProjectOverviewStats";
+
+import projects from "../../data/projects";
+import { filterProjects } from "../../utils/filterProjects";
 
 function Projects() {
-  return (
-    <main className="page">
-      <section className="page-hero projects-hero">
-        <Particle />
+  const [searchTerm, setSearchTerm] = useState("");
+  const [selectedCategory, setSelectedCategory] =
+    useState("All");
 
-        <Container>
-          <Reveal>
-            <span className="eyebrow">
+  const filteredProjects = useMemo(
+    () =>
+      filterProjects(
+        projects,
+        searchTerm,
+        selectedCategory
+      ),
+    [searchTerm, selectedCategory]
+  );
+
+  const resetFilters = () => {
+    setSearchTerm("");
+    setSelectedCategory("All");
+  };
+
+  return (
+    <main className="project-page">
+      <PageMeta
+        title="Software Development Projects"
+        description="Explore Nabil Ajwad Rosedi's AI, Flutter, full-stack, Laravel, React, TypeScript, API integration, and AWS cloud development projects."
+        canonicalPath="/project"
+      />
+
+      <Particle />
+
+      <Container className="project-section">
+        <Reveal>
+          <header className="project-page-header">
+            <span className="section-eyebrow">
               Selected work
             </span>
 
-            <h1>
-              Products built for
-              <span className="gradient-text">
-                {" "}
-                real-world use.
+            <h1 className="project-heading">
+              Projects built to solve{" "}
+              <span className="purple">
+                real problems.
               </span>
             </h1>
 
-            <p>
-              A selection of open-source and
-              professional work across AI, fintech,
-              mobile, enterprise software, Web3, and
-              cloud delivery.
+            <p className="project-page-description">
+              Explore my work across artificial intelligence,
+              mobile development, full-stack systems, and cloud
+              infrastructure. Each project includes its technical
+              decisions, responsibilities, challenges, and
+              outcomes.
             </p>
-          </Reveal>
+          </header>
+        </Reveal>
 
-          <Reveal
-            className="project-hero-note"
-            delay={150}
-          >
-            <span>01 — 06</span>
+        <Reveal delay={80}>
+          <ProjectOverviewStats />
+        </Reveal>
 
-            <p>
-              Each project reflects a different part
-              of my engineering range: product
-              thinking, system design, development,
-              integration, testing, or production
-              delivery.
-            </p>
-          </Reveal>
-        </Container>
-      </section>
+        <Reveal delay={100}>
+          <ProjectFilters
+            searchTerm={searchTerm}
+            setSearchTerm={setSearchTerm}
+            selectedCategory={selectedCategory}
+            setSelectedCategory={setSelectedCategory}
+            projectCount={filteredProjects.length}
+          />
+        </Reveal>
 
-      <section className="section project-list-section">
-        <Container>
-          <div className="project-showcase-grid">
-            {projects.map((project, index) => (
-              <ProjectCard
-                {...project}
-                index={index}
-                key={project.title}
-              />
+        {filteredProjects.length > 0 ? (
+          <Row className="project-grid">
+            {filteredProjects.map((project, index) => (
+              <Col
+                key={project.slug}
+                xs={12}
+                md={6}
+                xl={4}
+                className="project-card-column"
+              >
+                <Reveal delay={(index % 3) * 100}>
+                  <ProjectCards project={project} />
+                </Reveal>
+              </Col>
             ))}
-          </div>
+          </Row>
+        ) : (
+          <Reveal>
+            <div className="project-empty-state">
+              <div className="project-empty-icon">
+                <FiSearch aria-hidden="true" />
+              </div>
 
-          <Reveal className="github-cta">
-            <div>
-              <span className="eyebrow">
-                More engineering work
+              <h2>No matching projects found</h2>
+
+              <p>
+                Try another keyword or select a different
+                project category.
+              </p>
+
+              <button
+                type="button"
+                className="project-empty-reset"
+                onClick={resetFilters}
+              >
+                Show all projects
+              </button>
+            </div>
+          </Reveal>
+        )}
+
+        <Reveal>
+          <section className="project-contact-banner">
+            <div className="project-contact-content">
+              <span className="section-eyebrow">
+                Have a project in mind?
               </span>
 
               <h2>
-                Explore experiments, learning
-                projects, and source code.
+                Let&apos;s build something useful together.
               </h2>
+
+              <p>
+                I&apos;m interested in opportunities involving
+                full-stack development, Flutter applications,
+                AI integrations, APIs, and AWS cloud systems.
+              </p>
             </div>
 
             <a
-              className="button button-light"
-              href="https://github.com/cruzerblade95"
+              href="https://www.linkedin.com/in/nabil-ajwad-rosedi-4bbb621a2/"
               target="_blank"
-              rel="noreferrer"
+              rel="noopener noreferrer"
+              className="project-contact-button"
             >
-              Open GitHub
-              <BsArrowUpRight />
+              Contact on LinkedIn
             </a>
-          </Reveal>
-        </Container>
-      </section>
+          </section>
+        </Reveal>
+      </Container>
     </main>
   );
 }

@@ -5,43 +5,43 @@ import {
   Route,
   Routes,
 } from "react-router-dom";
-import "bootstrap/dist/css/bootstrap.min.css";
-import "./style.css";
-import "./App.css";
 
 import Preloader from "./components/Pre";
 import Navbar from "./components/Navbar";
 import Home from "./components/Home/Home";
 import About from "./components/About/About";
 import Projects from "./components/Projects/Projects";
-import Resume from "./components/Resume/ResumeNew";
+import ProjectDetail from "./components/Projects/ProjectDetail";
+import ResumeNew from "./components/Resume/ResumeNew";
 import Footer from "./components/Footer";
 import ScrollToTop from "./components/ScrollToTop";
 import ScrollProgress from "./components/ScrollProgress";
 
+import "bootstrap/dist/css/bootstrap.min.css";
+import "./style.css";
+import "./App.css";
+
 function App() {
-  const [loading, setLoading] = useState(true);
+  const [load, setLoad] = useState(true);
 
   useEffect(() => {
-    const timer = setTimeout(() => {
-      setLoading(false);
-    }, 850);
+    const loaderTimer = setTimeout(() => {
+      setLoad(false);
+    }, 1200);
 
-    return () => clearTimeout(timer);
+    return () => clearTimeout(loaderTimer);
   }, []);
 
   return (
     <Router>
-      <Preloader load={loading} />
+      <Preloader load={load} />
 
       <div
         className="App"
-        id={loading ? "no-scroll" : "scroll"}
+        id={load ? "no-scroll" : "scroll"}
       >
         <ScrollProgress />
-
         <Navbar />
-
         <ScrollToTop />
 
         <Routes>
@@ -51,11 +51,35 @@ function App() {
 
           <Route path="/project" element={<Projects />} />
 
-          <Route path="/resume" element={<Resume />} />
+          <Route
+            path="/project/:slug"
+            element={<ProjectDetail />}
+          />
+
+          <Route path="/resume" element={<ResumeNew />} />
+
+          <Route
+            path="/404"
+            element={
+              <main className="route-not-found-page">
+                <div className="route-not-found-content">
+                  <span>404</span>
+                  <h1>Page not found</h1>
+                  <p>
+                    The page you are looking for does not exist.
+                  </p>
+
+                  <a href="/" className="project-primary-button">
+                    Return home
+                  </a>
+                </div>
+              </main>
+            }
+          />
 
           <Route
             path="*"
-            element={<Navigate to="/" replace />}
+            element={<Navigate to="/404" replace />}
           />
         </Routes>
 
